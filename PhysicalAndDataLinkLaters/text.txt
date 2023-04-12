@@ -1,0 +1,17 @@
+1. 9 bits total
+2.
+    a. 0
+    b. 1
+    c. 0
+    d. 0
+3. The parity bit method can detect all single bit errors in which a single bit is flipped, but it cannot detect errors in which an even number of bits are flipped.
+4. In general, the parity bit method detects an error when there is an odd number of bit flips in a message. This is because the parity bit is set to ensure that the total number of ones (including the parity bit) in the message is even. If a single bit is flipped, the total number of ones (including the parity bit) becomes odd, and the parity bit can detect the error.
+
+5. However, the parity bit method fails to detect errors when there is an even number of bit flips in a message. This is because the parity bit cannot distinguish between an even number of bit flips and no bit flips. If two or more bits are flipped, the total number of ones (including the parity bit) remains even, and the parity bit cannot detect the error. In this case, the corrupted message will be accepted as valid, resulting in a "false negative" error.
+6. 38 bytes 
+7. 
+    a. 100 + 38 = 138 bytes // overhead length
+    b. 58 / 150 = 25.33% overhead
+8. 
+    a. 1538 bytes 
+    b. 2.45%

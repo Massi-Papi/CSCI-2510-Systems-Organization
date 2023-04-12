@@ -1,0 +1,11 @@
+/Users/massimoevelti/Desktop/mevelti/slumcs/target/debug/deps/yaml_rust-3ff4faa1d23d9082.rmeta: /Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/lib.rs /Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/emitter.rs /Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/parser.rs /Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/scanner.rs /Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/yaml.rs
+
+/Users/massimoevelti/Desktop/mevelti/slumcs/target/debug/deps/libyaml_rust-3ff4faa1d23d9082.rlib: /Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/lib.rs /Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/emitter.rs /Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/parser.rs /Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/scanner.rs /Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/yaml.rs
+
+/Users/massimoevelti/Desktop/mevelti/slumcs/target/debug/deps/yaml_rust-3ff4faa1d23d9082.d: /Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/lib.rs /Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/emitter.rs /Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/parser.rs /Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/scanner.rs /Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/yaml.rs
+
+/Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/lib.rs:
+/Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/emitter.rs:
+/Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/parser.rs:
+/Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/scanner.rs:
+/Users/massimoevelti/.cargo/registry/src/github.com-1ecc6299db9ec823/yaml-rust-0.4.5/src/yaml.rs:

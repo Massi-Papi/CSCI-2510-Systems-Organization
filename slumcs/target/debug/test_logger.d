@@ -1,0 +1,1 @@
+/Users/massimoevelti/Desktop/mevelti/slumcs/target/debug/test_logger: /Users/massimoevelti/Desktop/mevelti/slumcs/send_log/src/lib.rs /Users/massimoevelti/Desktop/mevelti/slumcs/test_logger/src/main.rs

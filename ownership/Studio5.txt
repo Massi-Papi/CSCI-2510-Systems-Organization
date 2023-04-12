@@ -1,0 +1,118 @@
+1. You would implement the drop method when you need to specify some code to be executed when an object is about to be destroyed, for example, to free resources that the object has acquired.
+
+2. copy() is a trait that is implemented for types that can be deeply copied using a memcpy-style operation. This means that for types that implement the copy trait, a new instance of the data is created and its contents are copied bit-by-bit into the new instance, without the need for allocating any additional memory. Examples of types that implement the copy trait are numbers (such as i32, f64, etc.), booleans, and characters.
+
+clone() is a trait that is implemented for types that can be deeply copied, but may require allocating additional memory and/or calling into other code. clone() is implemented for most complex data structures in the standard library, such as String, Vec, and HashMap.
+
+In general, if a type implements the copy trait, it's often faster and more efficient to use the copy operation, since it's a straightforward bitwise copy. However, if a type doesn't implement copy or if you need to make a mutable copy, you have to use clone.
+
+Note that it's not always possible to determine whether a type implements copy or clone just by looking at its type, since a type might implement both, or neither. To see whether a type implements a particular trait, you can use Rust's trait bounds mechanism.
+
+4. Which of the following statements is true?
+
+All clones are copies.
+All copies are clones
+
+The second statement "All copies are clones" is true.
+
+5. Supposing that Y has type String, does the statement X = Y perform a copy, clone, or move?
+
+It performs a move. when ownership is transferred, the previous owner can no longer access the value. In the assignment X = Y, ownership of the value stored in Y is transferred to X. After this assignment, Y is invalidated and cannot be used anymore.
+If you want to make a copy of Y instead of moving it, you can use the clone method. For example: X = Y.clone().
+
+6. Supposing that Y has type u32, does the statement X = Y perform a copy, clone, or move?
+
+In this case, since u32 implements the Copy trait, the value of Y is "copied" into X, rather than moved. This means that both X and Y now have their own independent copies of the value.
+
+7. It performs a move.
+
+The statement X = Y performs a move, not a copy or clone, when Y is an array of type [u32; 12] in Rust.
+
+In Rust, arrays have a fixed size and are stored on the stack. When an array is assigned to a new variable, its ownership is transferred to the new variable, so the original array is no longer accessible. This is known as a "move" in Rust, because the ownership of the array's contents has been transferred from one variable to another.
+
+For example:
+
+let Y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+let X = Y;
+After the assignment, Y is no longer valid, and attempting to use it will result in a compile-time error.
+
+Note that in Rust, values that implement the Copy trait are automatically "copied" when assigned to a new variable, whereas values that do not implement the Copy trait are moved by default. Arrays, like [u32; 12], do not implement the Copy trait, so they are moved by default.
+
+8. Vectors implement a clone.
+when you clone a vector, you create a new vector that refers to the same memory as the original, but has its own metadata, like length, capacity and pointer to the underlying data. This is usually more efficient than copying the entire vector. On the other hand, when you copy a vector, you create a completely new vector with its own memory, which can be inefficient in terms of memory usage and performance.
+
+***In general, types that allocate memory on the heap and have a dynamic size will typically implement Clone instead of Copy, while types that have a known, fixed size and are stored on the stack will implement Copy.***
+
+9. No, clone() is not automatically called, it is an explicit method.
+
+10. It fails to compile because the `greeting` has type `String`, which does not implement the `Copy` function. Therefore it moves the value into copy. 
+
+11. "If F is a function, and x is an argument to that function, does calling the function F(x) perform a copy or move? How do you know?"
+
+You can tell it performs a move because the ownership of x is transferred to the function F. This means that after the call, x is no longer accessible in the caller's scope. If you want to retain ownership of x, you need to pass a reference instead.
+
+12. It is dropped at point 3. At point 3 it calls in the modify function, and the modify function takes control of s.
+
+13. Why does the following code fail to compile? Try to identify the error on your own, but feel free to try and compile this code if you'd like. How should we fix it?
+
+fn main() {
+    let s = create_string();
+
+    let b = check_for_world(s);
+
+    println!("Does {s} contain 'world'? {b}");
+}
+
+
+fn create_string() -> String {
+    String::from("Hello, world!")
+}
+
+fn check_for_world( s1: String ) -> bool {
+    s1.contains("world")
+}
+
+It fails to compile because s is moved and not copied into b. 
+
+14. Does the following code fail to compile? Where is the variable S dropped?
+
+fn main() {
+
+    let mut s = String::from("Hello, ");
+
+    s.push_str("wor");
+    s.push_str("ld!");
+
+    println!("{s}");
+
+}
+
+It does not compile. I do not know where s is dropped.
+
+15. How many simultaneous non-mutable references can you create to a variable in Rust? Why?
+You can have multiple simultaneous non-mutable references to a variable in Rust, as long as they are all used within the same scope. This is a feature known as "multi-threading," and it allows multiple parts of the code to read from the same variable at the same time, without the risk of modifying the variable's contents. In general, you can have as many non-mutable references to a variable as you like, as long as they are all used within the same scope. However, in practice, there may be limits imposed by the amount of available memory or other constraints on your system.
+
+16. You can only have one. It is "mutable." The reason behind this is to enforce the strict ownership model in Rust, which ensures that the data is never mutated in an unsafe manner. By allowing only one mutable reference to a variable at a time, Rust ensures that the code is correct and safe, even in the presence of concurrent execution.
+
+17. Explain why the following code does not run:
+
+let mut s = String::from("hello");
+
+let r1 = &mut s;
+let r2 = &mut s;
+
+println!("{}, {}", r1, r2);
+
+It doesn't run because s is mutable and r1 and r2 are trying to modify the same piece of data.
+It's also not in a main function - hehe.
+
+18. Does the following code run? Why or why not?
+
+let mut s = String::from("hello");
+
+let r1 = &mut s;
+let r2 = &mut s;
+
+println!("{}", r2);
+
+Yes it runs because it is only printing calls r2. Really weird how this works.

@@ -1,0 +1,18 @@
+1. Programming that creates an object and that object is the center of the program. 
+
+Object Structure:
+
+Improved organization: Thinking about the object structure first allows you to organize your code better. You can create structures that clearly represent the different parts of your program, which makes it easier to maintain and modify your code.
+Improved readability: Well-structured objects are easier to read and understand. This makes it easier for other developers to understand your code and collaborate with you on the project.
+Easier to reason about: Object-oriented programming is designed to make it easier to reason about complex systems. By starting with object structure, you can create clear, well-defined objects that can be easily tested and debugged.
+
+Underlying Data:
+
+Better performance: Rust is designed for performance, and starting with the underlying data can help you optimize your code for speed and efficiency. By understanding the data structures and algorithms that underlie your program, you can write code that takes advantage of Rust's performance features.
+Better security: Rust is also designed for security, and starting with the underlying data can help you build a more secure program. By understanding the data flow and potential vulnerabilities in your program, you can write code that is less susceptible to attacks.
+Improved compatibility: Starting with the underlying data can also make your code more compatible with other programs and systems. By using standard data structures and formats, you can ensure that your code can be easily integrated with other Rust programs and libraries.
+
+
+2. Car would be the parent class and it the other components can be configured under it in whatever order. 
+
+3. 
